@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "https://deno.land/x/dotenv/load.ts": "./deno.land/x/dotenv@v3.2.0/load.ts",
+    "https://deno.land/": "./deno.land/"
+  }
+}
