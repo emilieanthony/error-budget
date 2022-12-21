@@ -1,0 +1,30 @@
+{
+	"lint": {
+		"files": {
+			"include": ["src/"]
+		},
+		"rules": {
+			"tags": ["recommended"],
+			"include": ["ban-untagged-todo"],
+			"exclude": ["no-unused-vars"]
+		}
+	},
+	"fmt": {
+		"files": {
+			"include": ["src/"]
+		},
+		"options": {
+			"useTabs": true,
+			"lineWidth": 100,
+			"indentWidth": 4,
+			"singleQuote": true,
+			"proseWrap": "preserve"
+		}
+	},
+	"test": {
+		"files": {
+			"include": ["src/"]
+		}
+	},
+	"importMap": "./vendor/import_map.json"
+}
