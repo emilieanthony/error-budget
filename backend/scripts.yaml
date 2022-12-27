@@ -1,0 +1,8 @@
+scripts:
+  start: deno run --allow-net --allow-env --allow-read --watch src/main.ts
+  test: deno test --allow-net --allow-env --allow-read --no-check --parallel
+  vendor: deno vendor src/deps.ts src/dev_deps.ts --force
+  cache: deno cache --lock=deno.lock --lock-write src/deps.ts src/dev_deps.ts
+  compile: deno compile --no-check --output app src/main.ts
+  lint: deno lint
+  fmt: deno fmt

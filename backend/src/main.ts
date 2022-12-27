@@ -1,4 +1,4 @@
-import { Application, Router } from './deps.ts';
+import { Application, isHttpError, Router } from './deps.ts';
 import { services } from './handlers/services.ts';
 
 const PORT = 3000;
@@ -8,6 +8,7 @@ const router = new Router();
 
 // Routes
 router.get('/services', services.list);
+router.post('/services', services.create);
 
 // Logger
 app.use(async (ctx, next) => {
@@ -22,6 +23,22 @@ app.use(async (ctx, next) => {
 	await next();
 	const ms = Date.now() - start;
 	ctx.response.headers.set('X-Response-Time', `${ms}ms`);
+});
+
+// Error handling
+app.use(async (context, next) => {
+	try {
+		await next();
+	} catch (err) {
+		if (isHttpError(err)) {
+			context.response.status = err.status;
+		} else {
+			context.response.status = 500;
+		}
+		console.warn(`Response error: [${context.response.status}]: ${err.message}`);
+		context.response.body = { error: err.message };
+		context.response.type = 'json';
+	}
 });
 
 app.use(router.routes());
