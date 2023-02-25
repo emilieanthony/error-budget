@@ -1,7 +1,8 @@
 import "./Service.css";
 import { useNavigate } from "react-router-dom";
 import React, { useContext } from "react";
-import { ThemeContext } from "./ThemeProvider";
+import { ThemeContext } from "../ThemeProvider";
+import Button from "../Button/Button";
 
 function Service({ displayName, description, goLiveTimestamp, id }) {
   const navigate = useNavigate();
@@ -16,7 +17,9 @@ function Service({ displayName, description, goLiveTimestamp, id }) {
       <h2>{displayName}</h2>
       <p>{description}</p>
       <p>{goLiveTimestamp}</p> {/* TODO: print ISO*/}
-      <button onClick={handleButtonClick}>View more</button>
+      <Button onClick={handleButtonClick} variant="secondary">
+        View more
+      </Button>
     </div>
   );
 }

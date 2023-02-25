@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "./Button/Button";
 
 function ServiceForm() {
   const [name, setName] = useState("");
@@ -50,7 +51,9 @@ function ServiceForm() {
             name="description"
           />
         </label>
-        <button type="submit">Save</button>
+        <Button type="submit" variant="primary">
+          Save
+        </Button>
       </form>
     </div>
   );

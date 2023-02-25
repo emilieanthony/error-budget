@@ -1,5 +1,5 @@
 import "./App.css";
-import Service from "./Components/Service";
+import Service from "./Components/Service/Service";
 import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "./Components/ThemeProvider";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +39,9 @@ function App() {
           key={service.id}
         />
       ))}
-      {error && <p>Error</p>}
+      {error && (
+        <p>Error - could not return services - have you started the backend?</p>
+      )}
     </div>
   );
 }
