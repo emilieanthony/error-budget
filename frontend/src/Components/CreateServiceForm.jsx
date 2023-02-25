@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "./Button/Button";
+import "./CreateServiceForm.css";
 
 function ServiceForm() {
   const [name, setName] = useState("");
@@ -36,19 +37,23 @@ function ServiceForm() {
         <label>
           Name of service:
           <input
+            className="input-field"
             type="text"
             value={name}
             onChange={handleNameChange}
             name="name"
+            placeholder="My first API"
           />
         </label>
         <label>
           Description:
           <input
+            className="input-field"
             type="text"
             value={description}
             onChange={handleDescriptionChange}
             name="description"
+            placeholder="An API for setting protocols, routines, and tools for building software applications."
           />
         </label>
         <Button type="submit" variant="primary">

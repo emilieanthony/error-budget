@@ -3,6 +3,7 @@ import Service from "./Components/Service/Service";
 import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "./Components/ThemeProvider";
 import { useNavigate } from "react-router-dom";
+import Button from "./Components/Button/Button";
 
 function App() {
   const [services, setServices] = useState([]);
@@ -28,8 +29,12 @@ function App() {
 
   return (
     <div className="App theme">
-      <button onClick={handleNewServiceClick}>Add service</button>
-      <button onClick={toggleTheme}>Toggle Theme</button>
+      <Button onClick={handleNewServiceClick} variant="primary">
+        Add service
+      </Button>
+      <Button onClick={toggleTheme} variant="secondary">
+        Toggle Theme
+      </Button>
       {services.map((service) => (
         <Service
           displayName={service.displayName}

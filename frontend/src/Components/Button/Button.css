@@ -1,7 +1,43 @@
+/* Primary button */
 .primary {
-  background-color: aqua;
+  background-color: #007bff;
+  color: #fff;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
+.primary:hover {
+  background-color: #0069d9;
+}
+
+/* Secondary button */
 .secondary {
-  background-color: bisque;
+  background-color: #fff;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.secondary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* WCAG compliance */
+.primary:focus,
+.secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.primary:active,
+.secondary:active {
+  background-color: #0056b3;
+  color: #fff;
 }
