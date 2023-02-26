@@ -1,0 +1,64 @@
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  width: calc(100% - 40px);
+  margin-bottom: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  /* Ensure sufficient color contrast for accessibility */
+  background-color: #333;
+  padding: 10px;
+}
+
+/* Ensure that links are visually distinguishable from non-links */
+.nav-links a:not([href]):not([tabindex]) {
+  cursor: default;
+}
+
+/* Ensure that focus indicators are visible for keyboard users */
+.nav-links a:focus {
+  outline: 2px solid #fff;
+}
+
+/* Ensure that the navigation is accessible to screen readers */
+.navbar a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure that the logo is accessible to screen readers */
+.logo:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure that the navigation is accessible to keyboard users */
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #666;
+}

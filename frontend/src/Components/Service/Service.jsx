@@ -18,7 +18,7 @@ function Service({ displayName, description, goLiveTimestamp, id }) {
       <p>{description}</p>
       <p>{goLiveTimestamp}</p> {/* TODO: print ISO*/}
       <Button onClick={handleButtonClick} variant="secondary">
-        View more
+        Open
       </Button>
     </div>
   );

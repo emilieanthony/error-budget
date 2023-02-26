@@ -7,6 +7,9 @@
   border: 10px;
   border: 1px solid rgb(34, 34, 34);
   box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
 }
 
 .item-service-card-light {
@@ -17,4 +20,7 @@
   border-radius: 5%;
   border: 1px solid rgb(34, 34, 34);
   box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
 }

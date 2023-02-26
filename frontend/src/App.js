@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "./Components/ThemeProvider";
 import { useNavigate } from "react-router-dom";
 import Button from "./Components/Button/Button";
+import Header from "./Components/Header/Header";
 
 function App() {
   const [services, setServices] = useState([]);
@@ -29,12 +30,31 @@ function App() {
 
   return (
     <div className="App theme">
+      <Header className="header">
+        <nav className="navbar">
+          <a href="/" className="logo">
+            My Site
+          </a>
+          <ul className="nav-links">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </Header>
       <Button onClick={handleNewServiceClick} variant="primary">
         Add service
       </Button>
       <Button onClick={toggleTheme} variant="secondary">
         Toggle Theme
       </Button>
+      <div className="service-overview">
       {services.map((service) => (
         <Service
           displayName={service.displayName}
@@ -44,6 +64,7 @@ function App() {
           key={service.id}
         />
       ))}
+      </div>
       {error && (
         <p>Error - could not return services - have you started the backend?</p>
       )}
